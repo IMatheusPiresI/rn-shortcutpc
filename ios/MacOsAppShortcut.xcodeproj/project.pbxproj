@@ -8,12 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* MacOsAppShortcutTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* MacOsAppShortcutTests.m */; };
-		0C80B921A6F3F58F76C31292 /* libPods-MacOsAppShortcut.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DCACB8F33CDC322A6C60F78 /* libPods-MacOsAppShortcut.a */; };
+		11C820F4B11A2408C224F280 /* libPods-MacOsAppShortcut-MacOsAppShortcutTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EE0556BF2CC25CDF57A7FC9 /* libPods-MacOsAppShortcut-MacOsAppShortcutTests.a */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		7699B88040F8A987B510C191 /* libPods-MacOsAppShortcut-MacOsAppShortcutTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-MacOsAppShortcut-MacOsAppShortcutTests.a */; };
+		1EEAF42384BB4E06B71EE39B /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 047D4FABD7E745FEBA8E8A90 /* Roboto-Medium.ttf */; };
+		5701700482DA42F087514C04 /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5A9CC1507BAA4C9599096C78 /* Roboto-Bold.ttf */; };
+		7B388EA65C8E2B94DB838C55 /* libPods-MacOsAppShortcut.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B281C5758272358D662E74D /* libPods-MacOsAppShortcut.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		98A8BAC7505D4B379CC72815 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5A125D6815D6419788A57B7E /* Roboto-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,19 +33,22 @@
 		00E356EE1AD99517003FC87E /* MacOsAppShortcutTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MacOsAppShortcutTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* MacOsAppShortcutTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MacOsAppShortcutTests.m; sourceTree = "<group>"; };
+		047D4FABD7E745FEBA8E8A90 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-Medium.ttf"; path = "../src/assets/fonts/Roboto-Medium.ttf"; sourceTree = "<group>"; };
+		0A6F614BCE4FDC78DE46BD40 /* Pods-MacOsAppShortcut-MacOsAppShortcutTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MacOsAppShortcut-MacOsAppShortcutTests.debug.xcconfig"; path = "Target Support Files/Pods-MacOsAppShortcut-MacOsAppShortcutTests/Pods-MacOsAppShortcut-MacOsAppShortcutTests.debug.xcconfig"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* MacOsAppShortcut.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacOsAppShortcut.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = MacOsAppShortcut/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegate.mm; path = MacOsAppShortcut/AppDelegate.mm; sourceTree = "<group>"; };
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = MacOsAppShortcut/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = MacOsAppShortcut/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = MacOsAppShortcut/main.m; sourceTree = "<group>"; };
-		19F6CBCC0A4E27FBF8BF4A61 /* libPods-MacOsAppShortcut-MacOsAppShortcutTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MacOsAppShortcut-MacOsAppShortcutTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		3B4392A12AC88292D35C810B /* Pods-MacOsAppShortcut.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MacOsAppShortcut.debug.xcconfig"; path = "Target Support Files/Pods-MacOsAppShortcut/Pods-MacOsAppShortcut.debug.xcconfig"; sourceTree = "<group>"; };
-		5709B34CF0A7D63546082F79 /* Pods-MacOsAppShortcut.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MacOsAppShortcut.release.xcconfig"; path = "Target Support Files/Pods-MacOsAppShortcut/Pods-MacOsAppShortcut.release.xcconfig"; sourceTree = "<group>"; };
-		5B7EB9410499542E8C5724F5 /* Pods-MacOsAppShortcut-MacOsAppShortcutTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MacOsAppShortcut-MacOsAppShortcutTests.debug.xcconfig"; path = "Target Support Files/Pods-MacOsAppShortcut-MacOsAppShortcutTests/Pods-MacOsAppShortcut-MacOsAppShortcutTests.debug.xcconfig"; sourceTree = "<group>"; };
-		5DCACB8F33CDC322A6C60F78 /* libPods-MacOsAppShortcut.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MacOsAppShortcut.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		22B7E5A3CA20BA8EF0BF27EB /* Pods-MacOsAppShortcut.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MacOsAppShortcut.release.xcconfig"; path = "Target Support Files/Pods-MacOsAppShortcut/Pods-MacOsAppShortcut.release.xcconfig"; sourceTree = "<group>"; };
+		2EE0556BF2CC25CDF57A7FC9 /* libPods-MacOsAppShortcut-MacOsAppShortcutTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MacOsAppShortcut-MacOsAppShortcutTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A125D6815D6419788A57B7E /* Roboto-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-Regular.ttf"; path = "../src/assets/fonts/Roboto-Regular.ttf"; sourceTree = "<group>"; };
+		5A9CC1507BAA4C9599096C78 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-Bold.ttf"; path = "../src/assets/fonts/Roboto-Bold.ttf"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = MacOsAppShortcut/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		89C6BE57DB24E9ADA2F236DE /* Pods-MacOsAppShortcut-MacOsAppShortcutTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MacOsAppShortcut-MacOsAppShortcutTests.release.xcconfig"; path = "Target Support Files/Pods-MacOsAppShortcut-MacOsAppShortcutTests/Pods-MacOsAppShortcut-MacOsAppShortcutTests.release.xcconfig"; sourceTree = "<group>"; };
+		9B281C5758272358D662E74D /* libPods-MacOsAppShortcut.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MacOsAppShortcut.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BEF03F42DDB468F88A7D21C3 /* Pods-MacOsAppShortcut-MacOsAppShortcutTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MacOsAppShortcut-MacOsAppShortcutTests.release.xcconfig"; path = "Target Support Files/Pods-MacOsAppShortcut-MacOsAppShortcutTests/Pods-MacOsAppShortcut-MacOsAppShortcutTests.release.xcconfig"; sourceTree = "<group>"; };
+		C077ED20F28059E18A0CADAD /* Pods-MacOsAppShortcut.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MacOsAppShortcut.debug.xcconfig"; path = "Target Support Files/Pods-MacOsAppShortcut/Pods-MacOsAppShortcut.debug.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -51,7 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7699B88040F8A987B510C191 /* libPods-MacOsAppShortcut-MacOsAppShortcutTests.a in Frameworks */,
+				11C820F4B11A2408C224F280 /* libPods-MacOsAppShortcut-MacOsAppShortcutTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,7 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C80B921A6F3F58F76C31292 /* libPods-MacOsAppShortcut.a in Frameworks */,
+				7B388EA65C8E2B94DB838C55 /* libPods-MacOsAppShortcut.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,8 +106,8 @@
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				5DCACB8F33CDC322A6C60F78 /* libPods-MacOsAppShortcut.a */,
-				19F6CBCC0A4E27FBF8BF4A61 /* libPods-MacOsAppShortcut-MacOsAppShortcutTests.a */,
+				9B281C5758272358D662E74D /* libPods-MacOsAppShortcut.a */,
+				2EE0556BF2CC25CDF57A7FC9 /* libPods-MacOsAppShortcut-MacOsAppShortcutTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -122,6 +128,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
+				AABED309A6CB45529387EEA1 /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -137,13 +144,24 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		AABED309A6CB45529387EEA1 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				5A9CC1507BAA4C9599096C78 /* Roboto-Bold.ttf */,
+				047D4FABD7E745FEBA8E8A90 /* Roboto-Medium.ttf */,
+				5A125D6815D6419788A57B7E /* Roboto-Regular.ttf */,
+			);
+			name = Resources;
+			path = "";
+			sourceTree = "<group>";
+		};
 		BBD78D7AC51CEA395F1C20DB /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				3B4392A12AC88292D35C810B /* Pods-MacOsAppShortcut.debug.xcconfig */,
-				5709B34CF0A7D63546082F79 /* Pods-MacOsAppShortcut.release.xcconfig */,
-				5B7EB9410499542E8C5724F5 /* Pods-MacOsAppShortcut-MacOsAppShortcutTests.debug.xcconfig */,
-				89C6BE57DB24E9ADA2F236DE /* Pods-MacOsAppShortcut-MacOsAppShortcutTests.release.xcconfig */,
+				C077ED20F28059E18A0CADAD /* Pods-MacOsAppShortcut.debug.xcconfig */,
+				22B7E5A3CA20BA8EF0BF27EB /* Pods-MacOsAppShortcut.release.xcconfig */,
+				0A6F614BCE4FDC78DE46BD40 /* Pods-MacOsAppShortcut-MacOsAppShortcutTests.debug.xcconfig */,
+				BEF03F42DDB468F88A7D21C3 /* Pods-MacOsAppShortcut-MacOsAppShortcutTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -155,12 +173,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "MacOsAppShortcutTests" */;
 			buildPhases = (
-				A55EABD7B0C7F3A422A6CC61 /* [CP] Check Pods Manifest.lock */,
+				4F502A71ECFBDBCD8727D7FA /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
-				C59DA0FBD6956966B86A3779 /* [CP] Embed Pods Frameworks */,
-				F6A41C54EA430FDDC6A6ED99 /* [CP] Copy Pods Resources */,
+				E2B7DB6E1DAE05B87D0CFF22 /* [CP] Embed Pods Frameworks */,
+				7A1FFA1B41C035FCE406A518 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -176,13 +194,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "MacOsAppShortcut" */;
 			buildPhases = (
-				C38B50BA6285516D6DCD4F65 /* [CP] Check Pods Manifest.lock */,
+				676E0995816E06D09BEF9EC6 /* [CP] Check Pods Manifest.lock */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
-				00EEFC60759A1932668264C0 /* [CP] Embed Pods Frameworks */,
-				E235C05ADACE081382539298 /* [CP] Copy Pods Resources */,
+				398D0E523563A826A204ACB8 /* [CP] Embed Pods Frameworks */,
+				A982BE6C52BB18407E46BCB0 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -243,6 +261,9 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				5701700482DA42F087514C04 /* Roboto-Bold.ttf in Resources */,
+				1EEAF42384BB4E06B71EE39B /* Roboto-Medium.ttf in Resources */,
+				98A8BAC7505D4B379CC72815 /* Roboto-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,7 +286,7 @@
 			shellPath = /bin/sh;
 			shellScript = "set -e\n\nWITH_ENVIRONMENT=\"../node_modules/react-native/scripts/xcode/with-environment.sh\"\nREACT_NATIVE_XCODE=\"../node_modules/react-native/scripts/react-native-xcode.sh\"\n\n/bin/sh -c \"$WITH_ENVIRONMENT $REACT_NATIVE_XCODE\"\n";
 		};
-		00EEFC60759A1932668264C0 /* [CP] Embed Pods Frameworks */ = {
+		398D0E523563A826A204ACB8 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -282,7 +303,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MacOsAppShortcut/Pods-MacOsAppShortcut-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		A55EABD7B0C7F3A422A6CC61 /* [CP] Check Pods Manifest.lock */ = {
+		4F502A71ECFBDBCD8727D7FA /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -304,7 +325,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C38B50BA6285516D6DCD4F65 /* [CP] Check Pods Manifest.lock */ = {
+		676E0995816E06D09BEF9EC6 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -326,24 +347,24 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C59DA0FBD6956966B86A3779 /* [CP] Embed Pods Frameworks */ = {
+		7A1FFA1B41C035FCE406A518 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MacOsAppShortcut-MacOsAppShortcutTests/Pods-MacOsAppShortcut-MacOsAppShortcutTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-MacOsAppShortcut-MacOsAppShortcutTests/Pods-MacOsAppShortcut-MacOsAppShortcutTests-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			name = "[CP] Embed Pods Frameworks";
+			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MacOsAppShortcut-MacOsAppShortcutTests/Pods-MacOsAppShortcut-MacOsAppShortcutTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-MacOsAppShortcut-MacOsAppShortcutTests/Pods-MacOsAppShortcut-MacOsAppShortcutTests-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MacOsAppShortcut-MacOsAppShortcutTests/Pods-MacOsAppShortcut-MacOsAppShortcutTests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MacOsAppShortcut-MacOsAppShortcutTests/Pods-MacOsAppShortcut-MacOsAppShortcutTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E235C05ADACE081382539298 /* [CP] Copy Pods Resources */ = {
+		A982BE6C52BB18407E46BCB0 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -360,21 +381,21 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MacOsAppShortcut/Pods-MacOsAppShortcut-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F6A41C54EA430FDDC6A6ED99 /* [CP] Copy Pods Resources */ = {
+		E2B7DB6E1DAE05B87D0CFF22 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MacOsAppShortcut-MacOsAppShortcutTests/Pods-MacOsAppShortcut-MacOsAppShortcutTests-resources-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-MacOsAppShortcut-MacOsAppShortcutTests/Pods-MacOsAppShortcut-MacOsAppShortcutTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			name = "[CP] Copy Pods Resources";
+			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MacOsAppShortcut-MacOsAppShortcutTests/Pods-MacOsAppShortcut-MacOsAppShortcutTests-resources-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-MacOsAppShortcut-MacOsAppShortcutTests/Pods-MacOsAppShortcut-MacOsAppShortcutTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MacOsAppShortcut-MacOsAppShortcutTests/Pods-MacOsAppShortcut-MacOsAppShortcutTests-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MacOsAppShortcut-MacOsAppShortcutTests/Pods-MacOsAppShortcut-MacOsAppShortcutTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -410,7 +431,7 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5B7EB9410499542E8C5724F5 /* Pods-MacOsAppShortcut-MacOsAppShortcutTests.debug.xcconfig */;
+			baseConfigurationReference = 0A6F614BCE4FDC78DE46BD40 /* Pods-MacOsAppShortcut-MacOsAppShortcutTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -437,7 +458,7 @@
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 89C6BE57DB24E9ADA2F236DE /* Pods-MacOsAppShortcut-MacOsAppShortcutTests.release.xcconfig */;
+			baseConfigurationReference = BEF03F42DDB468F88A7D21C3 /* Pods-MacOsAppShortcut-MacOsAppShortcutTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
@@ -461,11 +482,12 @@
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3B4392A12AC88292D35C810B /* Pods-MacOsAppShortcut.debug.xcconfig */;
+			baseConfigurationReference = C077ED20F28059E18A0CADAD /* Pods-MacOsAppShortcut.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = DXQA6Z45VT;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = MacOsAppShortcut/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -488,11 +510,12 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5709B34CF0A7D63546082F79 /* Pods-MacOsAppShortcut.release.xcconfig */;
+			baseConfigurationReference = 22B7E5A3CA20BA8EF0BF27EB /* Pods-MacOsAppShortcut.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = DXQA6Z45VT;
 				INFOPLIST_FILE = MacOsAppShortcut/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
