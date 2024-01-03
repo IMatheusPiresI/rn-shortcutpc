@@ -9,6 +9,11 @@ export const SafeArea = styled.SafeAreaView`
   flex: 1;
 `;
 
+export const SafeAreaContent = styled.View`
+  padding: 20px 0;
+  flex: 1;
+`;
+
 export const BoxLogo = styled.View`
   margin-top: 60px;
 `;

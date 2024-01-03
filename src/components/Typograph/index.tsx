@@ -10,9 +10,10 @@ type IProps = {
   children: ReactNode;
   fontSize?: number;
   font?: IFonts;
-  color?: 'primary' | 'text' | 'white';
+  color?: 'primary' | 'text' | 'white' | 'critical';
   flex?: boolean;
-  alignment?: 'justify';
+  alignment?: 'justify' | 'center';
+  lineHeight?: number;
 } & TextProps;
 
 export const Typograph: React.FC<IProps> = ({
@@ -22,6 +23,7 @@ export const Typograph: React.FC<IProps> = ({
   fontSize = 12,
   flex,
   alignment,
+  lineHeight,
   ...rest
 }) => {
   const getColor = (): string => {
@@ -32,6 +34,8 @@ export const Typograph: React.FC<IProps> = ({
         return theme.colors.text;
       case 'white':
         return theme.colors.white;
+      case 'critical':
+        return theme.colors.critical;
       default:
         return theme.colors.black;
     }
@@ -44,6 +48,7 @@ export const Typograph: React.FC<IProps> = ({
       fontSize={fontSize}
       flex={flex}
       alignment={alignment}
+      lineHeight={lineHeight}
       {...rest}
     >
       {children}

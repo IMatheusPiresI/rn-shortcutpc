@@ -8,7 +8,7 @@ type IProps = {
   fontSize?: number;
   logoWidth?: number;
   logoHeight?: number;
-  showText: boolean;
+  showText?: boolean;
 };
 
 export const Logo: React.FC<IProps> = ({

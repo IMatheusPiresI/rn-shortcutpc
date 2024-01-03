@@ -6,7 +6,8 @@ type ITypographTextProps = {
   fontSize: number;
   color: string;
   flex?: boolean;
-  alignment?: 'justify';
+  alignment?: string;
+  lineHeight?: number;
 };
 
 export const TypographText = styled.Text<ITypographTextProps>`
@@ -24,5 +25,11 @@ export const TypographText = styled.Text<ITypographTextProps>`
     alignment &&
     css`
       text-align: ${alignment};
+    `}
+
+  ${({ lineHeight }) =>
+    lineHeight &&
+    css`
+      line-height: ${lineHeight};
     `}
 `;

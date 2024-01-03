@@ -13,7 +13,7 @@ export const Paginator: React.FC<IProps> = ({ currentIndex }) => {
   return (
     <S.Container>
       {presentation.map((_, index) => (
-        <Dot currentIndex={currentIndex} index={index} />
+        <Dot key={index} currentIndex={currentIndex} index={index} />
       ))}
     </S.Container>
   );

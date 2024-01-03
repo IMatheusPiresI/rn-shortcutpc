@@ -9,7 +9,8 @@
       "@components/*": ["src/components/*"],
       "@assets/*": ["src/assets/*"],
       "@resources/*": ["src/resources/*"],
-      "@screens/*": ["src/screens/*"]
+      "@screens/*": ["src/screens/*"],
+      "@routes/*": ["src/routes/*"]
     }
   }
 }
