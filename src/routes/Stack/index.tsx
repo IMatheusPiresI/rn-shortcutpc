@@ -10,6 +10,9 @@ import ConfigApp from 'screens/Onboarding/ConfigShortcut/ConfigApp';
 import ConfigServerOnPC from 'screens/Onboarding/ConfigShortcut/ConfigServerOnPC';
 import Home from 'screens/App/Home';
 import { useAppConfigurationMMKV } from 'resources/hooks/useAppConfigurationMMKV';
+import EditConfigApp from 'screens/App/EditConfigApp';
+import { AppControlContext, AppControlProvider } from 'contexts/AppControl';
+import Settings from 'screens/App/Settings';
 
 const Stack = createStackNavigator();
 
@@ -34,10 +37,13 @@ const StackPresentation = () => {
 
 const StackApp = () => {
   return (
-    <Stack.Navigator initialRouteName="Home" screenOptions={stackConfig}>
-      <Stack.Screen name="Home" component={Home} />
-      <Stack.Screen name="ConfigApp" component={ConfigApp} />
-    </Stack.Navigator>
+    <AppControlProvider>
+      <Stack.Navigator initialRouteName="Home" screenOptions={stackConfig}>
+        <Stack.Screen name="Home" component={Home} />
+        <Stack.Screen name="EditConfigApp" component={EditConfigApp} />
+        <Stack.Screen name="Settings" component={Settings} />
+      </Stack.Navigator>
+    </AppControlProvider>
   );
 };
 

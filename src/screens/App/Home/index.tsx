@@ -5,11 +5,15 @@ import * as S from './styles';
 import { ListAppsSelecteds } from './_components/ListAppsSelecteds';
 import { Header } from 'components/Header';
 import { IApp } from 'mocks/appList';
+import { ModalConfirmDelete } from 'components/Modals/ModalConfirmDelete';
+import { useAppControlContext } from 'contexts/AppControl';
 const Home: React.FC = () => {
+  const { removeMultiplesAppsConfiguration } = useAppControlContext();
   const [showSelectAppOption, setShowSelectAppOption] =
     useState<boolean>(false);
 
   const [selectedApps, setSelectedApps] = useState<IApp[]>([]);
+  const [showModalDelete, setShowModalDelete] = useState<boolean>(false);
 
   const handleStartSelectApps = () => {
     setShowSelectAppOption(true);
@@ -21,7 +25,16 @@ const Home: React.FC = () => {
   };
 
   const handleDeleteApps = () => {
-    console.log('Delete Aps');
+    setShowModalDelete(true);
+  };
+
+  const onCancelDelete = () => {
+    setShowModalDelete(false);
+  };
+
+  const onConfirmDelete = () => {
+    setShowModalDelete(false);
+    removeMultiplesAppsConfiguration(selectedApps);
   };
 
   const handleSelectApp = (app: IApp) => {
@@ -38,6 +51,7 @@ const Home: React.FC = () => {
     <S.Container>
       <S.SafeArea>
         <Header
+          showMenu
           onSelectApps={showSelectAppOption}
           onCancel={handleCancelSelectApps}
           onDeletePress={handleDeleteApps}
@@ -50,6 +64,11 @@ const Home: React.FC = () => {
           onStartSelectApps={handleStartSelectApps}
         />
       </S.SafeArea>
+      <ModalConfirmDelete
+        visible={showModalDelete}
+        onClose={onCancelDelete}
+        onConfirm={onConfirmDelete}
+      />
     </S.Container>
   );
 };

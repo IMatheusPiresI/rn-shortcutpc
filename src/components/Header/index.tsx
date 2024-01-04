@@ -9,20 +9,25 @@ import { TouchableWithoutFeedback } from 'react-native';
 import AddSVG from '@assets/add.svg';
 import DeleteSVG from '@assets/remove.svg';
 import SettingsSVG from '@assets/settings.svg';
+import { useNavigation } from '@react-navigation/native';
 
 type IProps = {
-  onSelectApps: boolean;
-  onCancel: () => void;
-  showDeleteOption: boolean;
-  onDeletePress: () => void;
+  showMenu?: boolean;
+  onSelectApps?: boolean;
+  onCancel?: () => void;
+  showDeleteOption?: boolean;
+  onDeletePress?: () => void;
 };
 
 export const Header = ({
   onSelectApps,
+  showMenu,
   onCancel,
   onDeletePress,
   showDeleteOption,
 }: IProps) => {
+  const navigation = useNavigation();
+
   const {
     applyAnimationShowOption,
     rAnimatedHorizontalBarBottom,
@@ -41,7 +46,7 @@ export const Header = ({
   };
 
   const handleGoToAppConfiguration = () => {
-    console.log('App Configuration');
+    navigation.navigate('Settings');
   };
 
   useEffect(() => {
@@ -56,30 +61,30 @@ export const Header = ({
           ShortcutPC
         </Typograph>
       </S.BoxName>
-
-      {onSelectApps ? (
-        <S.CancelContainer>
-          <S.CancelButton onPress={onCancel}>
-            <Typograph font="Roboto-Bold" fontSize={14} color="white">
-              Cancelar
-            </Typograph>
-          </S.CancelButton>
-          {showDeleteOption && (
-            <S.ButtonDelete onPress={onDeletePress}>
-              <DeleteSVG width={24} height={24} />
-            </S.ButtonDelete>
-          )}
-        </S.CancelContainer>
-      ) : (
-        <S.ButtonIconOption
-          activeOpacity={0.7}
-          onPress={handleToogleShowOptions}
-        >
-          <S.BoxHorizontalBar style={rAnimatedHorizontalBarTop} />
-          <S.BoxHorizontalBar style={rAnimatedHorizontalBarHide} />
-          <S.BoxHorizontalBar style={rAnimatedHorizontalBarBottom} />
-        </S.ButtonIconOption>
-      )}
+      {showMenu &&
+        (onSelectApps ? (
+          <S.CancelContainer>
+            <S.CancelButton onPress={onCancel}>
+              <Typograph font="Roboto-Bold" fontSize={14} color="white">
+                Cancelar
+              </Typograph>
+            </S.CancelButton>
+            {showDeleteOption && (
+              <S.ButtonDelete onPress={onDeletePress}>
+                <DeleteSVG width={24} height={24} />
+              </S.ButtonDelete>
+            )}
+          </S.CancelContainer>
+        ) : (
+          <S.ButtonIconOption
+            activeOpacity={0.7}
+            onPress={handleToogleShowOptions}
+          >
+            <S.BoxHorizontalBar style={rAnimatedHorizontalBarTop} />
+            <S.BoxHorizontalBar style={rAnimatedHorizontalBarHide} />
+            <S.BoxHorizontalBar style={rAnimatedHorizontalBarBottom} />
+          </S.ButtonIconOption>
+        ))}
 
       <S.RNModal visible={showOptions} transparent>
         <TouchableWithoutFeedback onPress={handleToogleShowOptions}>

@@ -2,8 +2,8 @@ import React, { useMemo } from 'react';
 
 import * as S from './styles';
 import { CardButtonApp } from './_components/CardButtonApp';
-import { useAppConfigurationMMKV } from 'resources/hooks/useAppConfigurationMMKV';
 import { IApp } from 'mocks/appList';
+import { useAppControlContext } from 'contexts/AppControl';
 
 type IProps = {
   selectedAppOption: boolean;
@@ -17,17 +17,15 @@ export const ListAppsSelecteds: React.FC<IProps> = ({
   onSelectApp,
   selectedApps,
 }) => {
-  const { getListAppConfiguration } = useAppConfigurationMMKV();
+  const { appsList } = useAppControlContext();
 
   const appsSelecteds = useMemo(() => {
-    let listApps = getListAppConfiguration();
-
-    if (listApps) {
-      return listApps.filter((app) => app.selected === true);
+    if (appsList) {
+      return appsList.filter((app) => app.selected === true);
     }
 
     return [];
-  }, []);
+  }, [appsList]);
 
   return (
     <S.ListApps

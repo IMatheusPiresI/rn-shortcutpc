@@ -26,4 +26,10 @@ export const Container = styled.TouchableOpacity<IVariant>`
       border-width: 1px;
       border-color: ${theme.colors.primary};
     `}
+
+  ${({ variant, theme }) =>
+    variant === 'critical' &&
+    css`
+      background-color: ${theme.colors.critical_light};
+    `}
 `;

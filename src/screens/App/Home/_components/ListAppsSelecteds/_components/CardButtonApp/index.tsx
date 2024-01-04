@@ -9,7 +9,7 @@ import {
   useSharedValue,
   withTiming,
 } from 'react-native-reanimated';
-
+import lodash from 'lodash';
 import EditSVG from '@assets/edit.svg';
 import { useNavigation } from '@react-navigation/native';
 
@@ -84,8 +84,8 @@ export const CardButtonApp: React.FC<IProps> = ({
   }, [selectedApps]);
 
   const handleConfigApp = () => {
-    navigation.navigate('ConfigApp', {
-      app: app,
+    navigation.navigate('EditConfigApp', {
+      app: lodash.cloneDeep(app),
     });
   };
 
