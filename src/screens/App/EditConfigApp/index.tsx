@@ -9,17 +9,21 @@ import ArrowBackSVG from '@assets/arrow-back.svg';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import { IApp, IOpenningOption } from 'mocks/appList';
 import { CardAppSelect } from 'components/CardAppSelect';
-import { useAppListConfiguration } from 'contexts/AppConfiguration';
 import { verifyURL } from 'resources/utils/verifyURL';
-import { useAppConfigurationMMKV } from 'resources/hooks/useAppConfigurationMMKV';
 import { useAppControlContext } from 'contexts/AppControl';
 import { ModalConfirmDelete } from 'components/Modals/ModalConfirmDelete';
 
 const EditConfigApp: React.FC = () => {
   const route = useRoute();
-  const { app } = route.params as { app: IApp };
-  const { editAppSelectedConfiguration, removeAppSelectedConfiguration } =
-    useAppControlContext();
+  const { app, notUsedApp } = route.params as {
+    app: IApp;
+    notUsedApp?: boolean;
+  };
+  const {
+    editAppSelectedConfiguration,
+    removeAppSelectedConfiguration,
+    editAppNotUsedConfiguration,
+  } = useAppControlContext();
   const [appSelected, setAppSelected] = useState<IApp>(app);
   const [showModalDelete, setShowModalDelete] = useState<boolean>(false);
 
@@ -49,7 +53,7 @@ const EditConfigApp: React.FC = () => {
     if (openningOptionSelected.appOpenningOptions?.web) {
       const navigators = openningOptionSelected.appOpenningOptions.web.map(
         (navigator) => {
-          if (navigator.id === openningOption.id) {
+          if (navigator.name === openningOption.name) {
             navigator.selected = true;
           } else {
             navigator.selected = false;
@@ -62,18 +66,26 @@ const EditConfigApp: React.FC = () => {
     }
     if (openningOptionSelected.appOpenningOptions?.app) {
       if (
-        openningOption.id === openningOptionSelected.appOpenningOptions.app.id
+        String(openningOption.name) ===
+        String(openningOptionSelected.appOpenningOptions.app.name)
       ) {
         openningOptionSelected.appOpenningOptions.app.selected = true;
       } else {
         openningOptionSelected.appOpenningOptions.app.selected = false;
       }
     }
-
     setAppSelected(openningOptionSelected);
   };
 
   const handleConfirmConfigurationApp = async () => {
+    if (notUsedApp) {
+      const appUnusedConfiguration = { ...appSelected };
+      appUnusedConfiguration.selected = true;
+
+      editAppNotUsedConfiguration(appUnusedConfiguration);
+      navigation.goBack();
+      return;
+    }
     editAppSelectedConfiguration(appSelected);
     navigation.goBack();
   };

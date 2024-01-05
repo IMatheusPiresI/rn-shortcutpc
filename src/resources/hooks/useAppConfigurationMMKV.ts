@@ -31,35 +31,10 @@ export const useAppConfigurationMMKV = () => {
     return null;
   };
 
-  const editAppConfiguration = (app: IApp) => {
-    const listApps = getListAppConfiguration();
-    if (!listApps) return;
-
-    const newList = listApps.map((appList) => {
-      if (appList.id === app.id) {
-        return app;
-      }
-      return appList;
-    });
-
-    setListAppConfiguration(newList);
-  };
-
-  const removeAppConfiguration = (app: IApp) => {
-    const listApps = getListAppConfiguration();
-    if (!listApps) return;
-
-    const newList = listApps.filter((appList) => appList.id !== app.id);
-
-    setListAppConfiguration(newList);
-  };
-
   return {
     setListAppConfiguration,
     getListAppConfiguration,
     setIPNetworkConnected,
     getIPNetworkConnected,
-    editAppConfiguration,
-    removeAppConfiguration,
   };
 };

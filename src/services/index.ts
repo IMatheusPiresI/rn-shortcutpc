@@ -13,8 +13,6 @@ const getApiUrlFromStorage = () => {
 
   const userIp = getIPNetworkConnected();
 
-  console.log(`http://${userIp}:3000`);
-
   return `http://${userIp}:3000`;
 };
 

@@ -13,6 +13,7 @@ import { useAppConfigurationMMKV } from 'resources/hooks/useAppConfigurationMMKV
 import EditConfigApp from 'screens/App/EditConfigApp';
 import { AppControlContext, AppControlProvider } from 'contexts/AppControl';
 import Settings from 'screens/App/Settings';
+import AddMoreApps from 'screens/App/AddMoreApps';
 
 const Stack = createStackNavigator();
 
@@ -42,6 +43,7 @@ const StackApp = () => {
         <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="EditConfigApp" component={EditConfigApp} />
         <Stack.Screen name="Settings" component={Settings} />
+        <Stack.Screen name="AddMoreApps" component={AddMoreApps} />
       </Stack.Navigator>
     </AppControlProvider>
   );

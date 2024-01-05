@@ -7,3 +7,7 @@ export const ListApps = styled.FlatList.attrs({
     gap: 20,
   },
 })`` as unknown as typeof FlatList;
+
+export const ContainerEmpty = styled.View`
+  margin: 20px 0;
+`;

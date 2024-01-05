@@ -25,7 +25,7 @@ export const AppConfigurationProvider = ({ children }: IProviderChildren) => {
   const setAppConfiguration = (appSelected: IApp) => {
     setAppsList((prevState) =>
       prevState.map((app) => {
-        if (app.id === appSelected.id) {
+        if (app.name === appSelected.name) {
           appSelected.selected = true;
           return appSelected;
         } else {
@@ -38,7 +38,7 @@ export const AppConfigurationProvider = ({ children }: IProviderChildren) => {
   const removeConfigurationApp = (appSelected: IApp) => {
     setAppsList((prevState) =>
       prevState.map((app) => {
-        if (app.id === appSelected.id) {
+        if (app.name === appSelected.name) {
           app.selected = false;
           app.appOpenningOptions?.web?.map((navigator) => {
             navigator.selected = false;

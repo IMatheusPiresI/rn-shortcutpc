@@ -7,7 +7,6 @@ import { Typograph } from '@components/Typograph';
 
 import ArrowBackSVG from '@assets/arrow-back.svg';
 import { useNavigation, useRoute } from '@react-navigation/native';
-import axios from 'axios';
 import { IApp, IOpenningOption } from 'mocks/appList';
 import { CardAppSelect } from 'components/CardAppSelect';
 import { useAppListConfiguration } from 'contexts/AppConfiguration';
@@ -46,7 +45,7 @@ const ConfigApp: React.FC = () => {
     if (openningOptionSelected.appOpenningOptions?.web) {
       const navigators = openningOptionSelected.appOpenningOptions.web.map(
         (navigator) => {
-          if (navigator.id === openningOption.id) {
+          if (navigator.name === openningOption.name) {
             navigator.selected = true;
           } else {
             navigator.selected = false;
@@ -59,7 +58,8 @@ const ConfigApp: React.FC = () => {
     }
     if (openningOptionSelected.appOpenningOptions?.app) {
       if (
-        openningOption.id === openningOptionSelected.appOpenningOptions.app.id
+        openningOption.name ===
+        openningOptionSelected.appOpenningOptions.app.name
       ) {
         openningOptionSelected.appOpenningOptions.app.selected = true;
       } else {

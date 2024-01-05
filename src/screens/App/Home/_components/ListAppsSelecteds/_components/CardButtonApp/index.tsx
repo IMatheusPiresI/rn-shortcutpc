@@ -17,6 +17,7 @@ type IProps = {
   app: IApp;
   selectedAppOption: boolean;
   onStartSelectApps: () => void;
+  cancelSelectApps: () => void;
   selectedApps: IApp[];
   onSelectApp: (app: IApp) => void;
 };
@@ -26,6 +27,7 @@ export const CardButtonApp: React.FC<IProps> = ({
   selectedAppOption,
   selectedApps,
   onSelectApp,
+  cancelSelectApps,
   onStartSelectApps,
 }) => {
   const animationSelectApp = useSharedValue(0);
@@ -80,10 +82,11 @@ export const CardButtonApp: React.FC<IProps> = ({
   }, [selectedAppOption]);
 
   const isSelected = useMemo(() => {
-    return selectedApps.some((selectedApp) => selectedApp.id === app.id);
+    return selectedApps.some((selectedApp) => selectedApp.name === app.name);
   }, [selectedApps]);
 
   const handleConfigApp = () => {
+    cancelSelectApps();
     navigation.navigate('EditConfigApp', {
       app: lodash.cloneDeep(app),
     });

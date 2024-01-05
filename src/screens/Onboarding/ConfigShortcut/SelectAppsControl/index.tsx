@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useMemo } from 'react';
+import React, { useCallback, useEffect, useMemo, useState } from 'react';
 
 import * as S from './styles';
 
@@ -16,11 +16,13 @@ import { IApp } from 'mocks/appList';
 import { FirebaseService } from 'services/firebase';
 import { getUrlIconNavigator } from 'resources/utils/getURLNavigator';
 import { INavigators } from 'mocks/webApps';
+import theme from 'resources/theme';
+import { getAllAppsDownloadeds } from 'resources/helpers/getAllAppsInstalleds';
 
 const SelectAppsControl = () => {
   const { appsList, setAppsInstalledList, finishOnboardingSelectedApps } =
     useAppListConfiguration();
-
+  const [loading, setLoading] = useState<boolean>(true);
   const navigation = useNavigation();
 
   const handleGoBack = () => {
@@ -42,48 +44,13 @@ const SelectAppsControl = () => {
 
   const getAppsDownloadeds = useCallback(async () => {
     try {
-      const appsInstalleds = await ServerPCService.getAppsList();
-      const webApps = await FirebaseService.getAppsList();
-      const webAppsFormatted: IApp[] = webApps.map((app) => {
-        return {
-          id: app.id,
-          name: app.name,
-          logo: app.logo,
-          url: app.url,
-          selected: false,
-          appOpenningOptions: {
-            web: appsInstalleds.navigators.map(
-              (navigator: INavigators, index) => {
-                return {
-                  id: String(index),
-                  name: navigator,
-                  logo: getUrlIconNavigator(navigator),
-                  selected: false,
-                };
-              },
-            ),
-          },
-        };
-      });
-      const myApps: IApp[] = appsInstalleds.apps.map((app) => {
-        return {
-          id: app.id,
-          name: app.name,
-          logo: app.image,
-          selected: false,
-          appOpenningOptions: {
-            app: {
-              id: app.id,
-              name: app.name,
-              logo: app.image,
-              selected: false,
-            },
-          },
-        };
-      });
-      setAppsInstalledList([...webAppsFormatted, ...myApps]);
+      setLoading(true);
+      const listAllApps = await getAllAppsDownloadeds();
+      setAppsInstalledList(listAllApps);
     } catch (err) {
       console.log(err);
+    } finally {
+      setLoading(false);
     }
   }, []);
 
@@ -126,22 +93,50 @@ const SelectAppsControl = () => {
               </Typograph>
             </S.BoxDescription>
             <S.BoxListApps>
-              <S.ListApps
-                data={appsList}
-                keyExtractor={(item) => item.id}
-                bounces={false}
-                renderItem={({ item }) => (
-                  <CardApp
-                    app={item}
-                    onPress={() => {
-                      const appSelected = lodash.cloneDeep(item);
-                      navigation.navigate('ConfigApp', {
-                        app: appSelected,
-                      });
-                    }}
-                  />
-                )}
-              />
+              {loading ? (
+                <S.LoadingComponent>
+                  <S.Loading size="large" color={theme.colors.primary} />
+                  <Typograph
+                    font="Roboto-Bold"
+                    fontSize={16}
+                    alignment="justify"
+                    color="text"
+                  >
+                    Buscando aplicativos...
+                  </Typograph>
+                </S.LoadingComponent>
+              ) : (
+                <S.ListApps
+                  data={appsList}
+                  keyExtractor={(item) => item.id}
+                  bounces={false}
+                  renderItem={({ item }) => (
+                    <CardApp
+                      app={item}
+                      onPress={() => {
+                        const appSelected = lodash.cloneDeep(item);
+                        navigation.navigate('ConfigApp', {
+                          app: appSelected,
+                        });
+                      }}
+                    />
+                  )}
+                  ListEmptyComponent={() => (
+                    <S.EmptyComponent>
+                      <Typograph
+                        font="Roboto-Bold"
+                        fontSize={14}
+                        alignment="justify"
+                        color="critical"
+                      >
+                        Ocorreu um erro e não encontramos nenhum aplicativo
+                        instalado em seu computador, verifique os passos para
+                        configuração e tente novamente.
+                      </Typograph>
+                    </S.EmptyComponent>
+                  )}
+                />
+              )}
             </S.BoxListApps>
           </S.Content>
           <S.Footer>

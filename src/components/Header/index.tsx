@@ -10,9 +10,10 @@ import AddSVG from '@assets/add.svg';
 import DeleteSVG from '@assets/remove.svg';
 import SettingsSVG from '@assets/settings.svg';
 import { useNavigation } from '@react-navigation/native';
-
+import ArrowBackSVG from '@assets/arrow-back.svg';
 type IProps = {
   showMenu?: boolean;
+  showArrow?: boolean;
   onSelectApps?: boolean;
   onCancel?: () => void;
   showDeleteOption?: boolean;
@@ -21,6 +22,7 @@ type IProps = {
 
 export const Header = ({
   onSelectApps,
+  showArrow,
   showMenu,
   onCancel,
   onDeletePress,
@@ -42,11 +44,17 @@ export const Header = ({
   };
 
   const handleGoToAddMoreAppsApps = () => {
-    console.log('Adicionar App');
+    handleToogleShowOptions();
+    navigation.navigate('AddMoreApps');
   };
 
   const handleGoToAppConfiguration = () => {
+    handleToogleShowOptions();
     navigation.navigate('Settings');
+  };
+
+  const handleGoBack = () => {
+    navigation.goBack();
   };
 
   useEffect(() => {
@@ -55,6 +63,11 @@ export const Header = ({
 
   return (
     <S.Header>
+      {showArrow && (
+        <S.ButtonArrow onPress={handleGoBack}>
+          <ArrowBackSVG />
+        </S.ButtonArrow>
+      )}
       <Logo logoWidth={36} logoHeight={36} fontSize={24} />
       <S.BoxName>
         <Typograph font="Roboto-Bold" fontSize={18} color="primary">

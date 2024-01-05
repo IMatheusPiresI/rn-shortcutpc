@@ -35,6 +35,7 @@ export const BoxDescription = styled.View`
 
 export const BoxListApps = styled.View`
   flex: 1;
+  margin: 4px 0;
 `;
 
 export const ListApps = styled.FlatList.attrs({
@@ -53,3 +54,15 @@ export const BoxOptionsNavigators = styled.View`
   gap: 12px;
   margin-top: 12px;
 `;
+
+export const EmptyComponent = styled.View`
+  margin-top: 24px;
+`;
+
+export const LoadingComponent = styled.View`
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+`;
+
+export const Loading = styled.ActivityIndicator``;

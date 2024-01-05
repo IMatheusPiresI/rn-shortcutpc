@@ -8,9 +8,10 @@ export declare global {
       RecoverUserIP: undefined;
       SelectAppsControl: undefined;
       ConfigApp: { app: IApp };
-      EditConfigApp: { app: IApp };
+      EditConfigApp: { app: IApp; notUsedApp?: boolean };
       ConfigServerOnPC: undefined;
       Settings: undefined;
+      AddMoreApps: undefined;
     }
   }
 }

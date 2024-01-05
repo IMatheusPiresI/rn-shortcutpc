@@ -19,6 +19,10 @@ const Home: React.FC = () => {
     setShowSelectAppOption(true);
   };
 
+  const handleFinishSelectApps = () => {
+    setShowSelectAppOption(false);
+  };
+
   const handleCancelSelectApps = () => {
     setShowSelectAppOption(false);
     setSelectedApps([]);
@@ -35,12 +39,13 @@ const Home: React.FC = () => {
   const onConfirmDelete = () => {
     setShowModalDelete(false);
     removeMultiplesAppsConfiguration(selectedApps);
+    handleCancelSelectApps();
   };
 
   const handleSelectApp = (app: IApp) => {
-    if (selectedApps.some((selectedApp) => selectedApp.id === app.id)) {
+    if (selectedApps.some((selectedApp) => selectedApp.name === app.name)) {
       setSelectedApps((prevState) =>
-        prevState.filter((prevApp) => prevApp.id !== app.id),
+        prevState.filter((prevApp) => prevApp.name !== app.name),
       );
       return;
     }
@@ -62,6 +67,7 @@ const Home: React.FC = () => {
           selectedApps={selectedApps}
           onSelectApp={handleSelectApp}
           onStartSelectApps={handleStartSelectApps}
+          cancelSelectApps={handleFinishSelectApps}
         />
       </S.SafeArea>
       <ModalConfirmDelete

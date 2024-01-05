@@ -17,6 +17,17 @@ export const Header = styled.View`
   height: 50px;
 `;
 
+export const ButtonArrow = styled.TouchableOpacity.attrs({
+  hitSlop: {
+    top: 24,
+    left: 24,
+    right: 24,
+    bottom: 24,
+  },
+})`
+  margin-right: 16px;
+`;
+
 export const BoxName = styled.View`
   flex: 1;
   margin-left: 12px;

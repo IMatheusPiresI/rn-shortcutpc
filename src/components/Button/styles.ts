@@ -13,12 +13,6 @@ export const Container = styled.TouchableOpacity<IVariant>`
   background-color: ${({ theme }) => theme.colors.primary};
   border-radius: 12px;
 
-  ${({ disabled, theme }) =>
-    disabled &&
-    css`
-      background-color: ${theme.colors.gray};
-    `}
-
   ${({ variant, theme }) =>
     variant === 'outline' &&
     css`
@@ -31,5 +25,11 @@ export const Container = styled.TouchableOpacity<IVariant>`
     variant === 'critical' &&
     css`
       background-color: ${theme.colors.critical_light};
+    `}
+
+    ${({ disabled, theme }) =>
+    disabled &&
+    css`
+      background-color: ${theme.colors.gray};
     `}
 `;
