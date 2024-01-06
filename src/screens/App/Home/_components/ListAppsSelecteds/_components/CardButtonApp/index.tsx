@@ -12,6 +12,7 @@ import {
 import lodash from 'lodash';
 import EditSVG from '@assets/edit.svg';
 import { useNavigation } from '@react-navigation/native';
+import { useErrorControlContext } from 'contexts/ErrorControl';
 
 type IProps = {
   app: IApp;
@@ -30,35 +31,41 @@ export const CardButtonApp: React.FC<IProps> = ({
   cancelSelectApps,
   onStartSelectApps,
 }) => {
+  const { openModalError } = useErrorControlContext();
   const animationSelectApp = useSharedValue(0);
   const navigation = useNavigation();
+
   const handleOpenApp = async () => {
-    if (app.appOpenningOptions?.app) {
-      await ServerPCService.openAppSelected({
-        id: app.id,
-        name: app.name,
-        appOpenningOptions: {
-          app: {
-            id: app.appOpenningOptions.app?.id,
-            name: app.appOpenningOptions.app?.name,
-            selected: app.appOpenningOptions.app?.selected,
+    try {
+      if (app.appOpenningOptions?.app) {
+        await ServerPCService.openAppSelected({
+          id: app.id,
+          name: app.name,
+          appOpenningOptions: {
+            app: {
+              id: app.appOpenningOptions.app?.id,
+              name: app.appOpenningOptions.app?.name,
+              selected: app.appOpenningOptions.app?.selected,
+            },
           },
-        },
-      });
-    }
-    if (app.appOpenningOptions.web && app.url) {
-      await ServerPCService.openAppSelected({
-        id: app.id,
-        name: app.name,
-        url: app.url,
-        appOpenningOptions: {
-          web: app.appOpenningOptions.web.map((navigator) => ({
-            id: navigator.id,
-            name: navigator.name,
-            selected: navigator.selected,
-          })),
-        },
-      });
+        });
+      }
+      if (app.appOpenningOptions.web && app.url) {
+        await ServerPCService.openAppSelected({
+          id: app.id,
+          name: app.name,
+          url: app.url,
+          appOpenningOptions: {
+            web: app.appOpenningOptions.web.map((navigator) => ({
+              id: navigator.id,
+              name: navigator.name,
+              selected: navigator.selected,
+            })),
+          },
+        });
+      }
+    } catch (err) {
+      openModalError();
     }
   };
 

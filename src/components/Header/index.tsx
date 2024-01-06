@@ -11,6 +11,7 @@ import DeleteSVG from '@assets/remove.svg';
 import SettingsSVG from '@assets/settings.svg';
 import { useNavigation } from '@react-navigation/native';
 import ArrowBackSVG from '@assets/arrow-back.svg';
+
 type IProps = {
   showMenu?: boolean;
   showArrow?: boolean;
