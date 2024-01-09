@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useCallback, useMemo, useState } from 'react';
 
 import * as S from './styles';
 
@@ -7,13 +7,19 @@ import { Header } from 'components/Header';
 import { IApp } from 'mocks/appList';
 import { ModalConfirmDelete } from 'components/Modals/ModalConfirmDelete';
 import { useAppControlContext } from 'contexts/AppControl';
+import { FloatingButton } from 'components/FloatingButton';
+import { useAppConfigurationMMKV } from 'resources/hooks/useAppConfigurationMMKV';
+import { useFocusEffect } from '@react-navigation/native';
 const Home: React.FC = () => {
+  const { getComputerPasswordConfigValue, getComputerPasswordConfigBool } =
+    useAppConfigurationMMKV();
   const { removeMultiplesAppsConfiguration } = useAppControlContext();
   const [showSelectAppOption, setShowSelectAppOption] =
     useState<boolean>(false);
 
   const [selectedApps, setSelectedApps] = useState<IApp[]>([]);
   const [showModalDelete, setShowModalDelete] = useState<boolean>(false);
+  const [showUnblockPC, setShowUnblockPC] = useState<boolean>(false);
 
   const handleStartSelectApps = () => {
     setShowSelectAppOption(true);
@@ -52,6 +58,20 @@ const Home: React.FC = () => {
     setSelectedApps((prevState) => [...prevState, app]);
   };
 
+  const verifyShowUnblockPC = useCallback(() => {
+    const showPasswordConfig = getComputerPasswordConfigBool();
+
+    const pcPassword = getComputerPasswordConfigValue();
+
+    if (showPasswordConfig && pcPassword && pcPassword.length > 0) {
+      setShowUnblockPC(true);
+      return;
+    }
+    setShowUnblockPC(false);
+  }, []);
+
+  useFocusEffect(() => verifyShowUnblockPC());
+
   return (
     <S.Container>
       <S.SafeArea>
@@ -69,6 +89,7 @@ const Home: React.FC = () => {
           onStartSelectApps={handleStartSelectApps}
           cancelSelectApps={handleFinishSelectApps}
         />
+        {showUnblockPC && <FloatingButton />}
       </S.SafeArea>
       <ModalConfirmDelete
         visible={showModalDelete}

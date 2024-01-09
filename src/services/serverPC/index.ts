@@ -11,6 +11,10 @@ type IGetAppsList = {
   navigators: INavigators[];
 };
 
+type IPassword = {
+  password: string;
+};
+
 export const ServerPCService = {
   verifyConnection: async () => {
     const result = await api.get('/connection/verify-connection-server');
@@ -24,6 +28,12 @@ export const ServerPCService = {
   },
   getAppsList: async () => {
     const result = await api.get<IGetAppsList>('/appInstalled/list-apps');
+
+    return result.data;
+  },
+
+  unblock: async (data: IPassword) => {
+    const result = await api.post('/appAction/unblock', data);
 
     return result.data;
   },

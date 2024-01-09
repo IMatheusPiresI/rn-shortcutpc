@@ -10,7 +10,7 @@ type IProps = {
   children: ReactNode;
   fontSize?: number;
   font?: IFonts;
-  color?: 'primary' | 'text' | 'white' | 'critical';
+  color?: 'primary' | 'text' | 'white' | 'critical' | 'gray';
   flex?: boolean;
   alignment?: 'justify' | 'center';
   lineHeight?: number;
@@ -36,6 +36,8 @@ export const Typograph: React.FC<IProps> = ({
         return theme.colors.white;
       case 'critical':
         return theme.colors.critical;
+      case 'gray':
+        return theme.colors.gray;
       default:
         return theme.colors.black;
     }

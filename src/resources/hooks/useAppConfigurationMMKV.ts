@@ -4,6 +4,9 @@ import { MMKV } from 'react-native-mmkv';
 export const useAppConfigurationMMKV = () => {
   const KEY_APP_LIST_CONFIGURATION = 'listAppsConfiguration';
   const KEY_APP_IP_CONFIGURATION = 'IPConnection';
+  const KEY_APP_COMPUTER_PASSWORD = 'ComputerPassword';
+  const KEY_APP_COMPUTER_PASSWORD_VALUE = 'ComputerPasswordValue';
+
   const store = new MMKV({
     id: '@shortcutPC',
   });
@@ -18,6 +21,26 @@ export const useAppConfigurationMMKV = () => {
 
   const setListAppConfiguration = (listApps: IApp[]) => {
     store.set(KEY_APP_LIST_CONFIGURATION, JSON.stringify(listApps));
+  };
+
+  const getComputerPasswordConfigBool = () => {
+    const passwordConfigBool = store.getBoolean(KEY_APP_COMPUTER_PASSWORD);
+
+    return passwordConfigBool;
+  };
+
+  const setComputerPasswordConfigBool = (optionValue: boolean) => {
+    store.set(KEY_APP_COMPUTER_PASSWORD, optionValue);
+  };
+
+  const getComputerPasswordConfigValue = () => {
+    const passwordValue = store.getString(KEY_APP_COMPUTER_PASSWORD_VALUE);
+
+    return passwordValue;
+  };
+
+  const setComputerPasswordConfigValue = (password: string) => {
+    store.set(KEY_APP_COMPUTER_PASSWORD_VALUE, password);
   };
 
   const getListAppConfiguration = (): IApp[] | null => {
@@ -36,5 +59,9 @@ export const useAppConfigurationMMKV = () => {
     getListAppConfiguration,
     setIPNetworkConnected,
     getIPNetworkConnected,
+    getComputerPasswordConfigBool,
+    setComputerPasswordConfigBool,
+    getComputerPasswordConfigValue,
+    setComputerPasswordConfigValue,
   };
 };
