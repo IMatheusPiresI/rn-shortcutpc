@@ -137,8 +137,6 @@ const Settings: React.FC = () => {
                     <S.InputPassword
                       value={pcPassword}
                       onChangeText={setPcPassword}
-                      spellCheck={false}
-                      autoCorrect={false}
                       secureTextEntry={!showPassword}
                       placeholder="Digite a senha do computador"
                       placeholderTextColor={theme.colors.gray}

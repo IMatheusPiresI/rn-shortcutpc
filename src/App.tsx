@@ -4,6 +4,7 @@ import { ThemeProvider } from 'styled-components/native';
 import { AppRoutes } from 'routes';
 import { AppConfigurationProvider } from 'contexts/AppConfiguration';
 import { ErrorControlProvider } from 'contexts/ErrorControl';
+import { Platform, StatusBar } from 'react-native';
 
 const App: React.FC = () => {
   return (
@@ -11,6 +12,9 @@ const App: React.FC = () => {
       <ErrorControlProvider>
         <AppConfigurationProvider>
           <AppRoutes />
+          {Platform.OS === 'android' && (
+            <StatusBar backgroundColor="#fff" barStyle="dark-content" />
+          )}
         </AppConfigurationProvider>
       </ErrorControlProvider>
     </ThemeProvider>
