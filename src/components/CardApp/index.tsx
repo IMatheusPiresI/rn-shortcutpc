@@ -22,7 +22,9 @@ export const CardApp: React.FC<IProps> = ({ app, ...rest }) => {
       <S.BoxName>
         <Typograph>{app.name}</Typograph>
       </S.BoxName>
-      <S.BoxSelect>{app.selected && <S.BoxSelected />}</S.BoxSelect>
+      <S.BoxSelect>
+        {app.selected && <S.BoxSelected testID="cardAppSelected" />}
+      </S.BoxSelect>
     </S.Container>
   );
 };

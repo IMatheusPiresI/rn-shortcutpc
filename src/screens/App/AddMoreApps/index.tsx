@@ -44,7 +44,6 @@ const AddMoreApps: React.FC = () => {
       await getAppsNotUsed();
     } catch (err) {
       setError(true);
-      console.log('Erro ao buscar listagem de aplicativos');
     } finally {
       setLoading(false);
     }

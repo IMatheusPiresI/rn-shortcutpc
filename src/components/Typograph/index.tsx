@@ -5,12 +5,13 @@ import theme from '@resources/theme';
 import { TextProps } from 'react-native';
 
 export type IFonts = 'Roboto-Regular' | 'Roboto-Medium' | 'Roboto-Bold';
+export type IColors = 'primary' | 'text' | 'white' | 'critical' | 'gray';
 
 type IProps = {
   children: ReactNode;
   fontSize?: number;
   font?: IFonts;
-  color?: 'primary' | 'text' | 'white' | 'critical' | 'gray';
+  color?: IColors;
   flex?: boolean;
   alignment?: 'justify' | 'center';
   lineHeight?: number;
@@ -27,20 +28,10 @@ export const Typograph: React.FC<IProps> = ({
   ...rest
 }) => {
   const getColor = (): string => {
-    switch (color) {
-      case 'primary':
-        return theme.colors.primary;
-      case 'text':
-        return theme.colors.text;
-      case 'white':
-        return theme.colors.white;
-      case 'critical':
-        return theme.colors.critical;
-      case 'gray':
-        return theme.colors.gray;
-      default:
-        return theme.colors.black;
+    if (color) {
+      return theme.colors[color];
     }
+    return theme.colors.black;
   };
 
   return (

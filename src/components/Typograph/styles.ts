@@ -30,6 +30,6 @@ export const TypographText = styled.Text<ITypographTextProps>`
   ${({ lineHeight }) =>
     lineHeight &&
     css`
-      line-height: ${lineHeight};
+      line-height: ${lineHeight}px;
     `}
 `;

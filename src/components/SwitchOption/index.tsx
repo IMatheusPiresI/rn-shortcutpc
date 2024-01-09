@@ -54,8 +54,6 @@ export const SwitchOption: React.FC<IProps> = ({
 
   const getPasswordConfigOption = useCallback(() => {
     const option = getComputerPasswordConfigBool();
-    console.log(option);
-    console.log(!!option);
     setOptionSelected(!!option);
   }, []);
 
@@ -68,7 +66,11 @@ export const SwitchOption: React.FC<IProps> = ({
   }, [changeAnimation]);
 
   return (
-    <S.Container activeOpacity={1} onPress={handleToogleOption}>
+    <S.Container
+      activeOpacity={1}
+      onPress={handleToogleOption}
+      testID="SwitchOptionButton"
+    >
       <S.ContainerColor style={rAnimatedBgColor}>
         <S.BoxOff>
           <Typograph font="Roboto-Bold" color="primary" fontSize={12}>

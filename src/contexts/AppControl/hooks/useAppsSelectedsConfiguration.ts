@@ -39,7 +39,6 @@ export const useAppsSelectedsConfiguration = () => {
           });
         }
         if (appList.appOpenningOptions?.app) {
-          console.log('euuu');
           appList.appOpenningOptions.app.selected = false;
         }
 
@@ -67,7 +66,6 @@ export const useAppsSelectedsConfiguration = () => {
         });
       }
       if (appList.appOpenningOptions?.app) {
-        console.log('euuu');
         appList.appOpenningOptions.app.selected = false;
       }
       return appList;
