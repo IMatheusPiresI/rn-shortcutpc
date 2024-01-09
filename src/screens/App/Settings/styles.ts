@@ -11,15 +11,30 @@ export const SafeArea = styled.SafeAreaView`
 
 export const Content = styled.View`
   flex: 1;
+
+  justify-content: flex-end;
+`;
+
+export const ContentSettings = styled.View`
+  flex: 1;
   padding: 20px;
 `;
 
 export const BoxConfigurePassword = styled.View`
   margin-top: 16px;
+  flex: 1;
+  justify-content: flex-end;
+`;
+
+export const BoxInput = styled.View`
+  margin-top: 24px;
+  padding: 0 20px;
 `;
 
 export const BoxRow = styled.View`
   flex-direction: row;
+  margin-top: 24px;
+  padding: 0 20px;
 `;
 
 export const BoxFlex = styled.View`
@@ -69,11 +84,14 @@ export const ButtonIconPassword = styled.TouchableOpacity`
 `;
 
 export const BoxPasswordContent = styled.View`
-  margin-top: 12px;
+  margin-top: 24px;
+  margin-left: 24px;
+  margin-right: 24px;
   border-width: 1px;
   border-radius: 12px;
   border-color: ${({ theme }) => theme.colors.primary};
   padding: 12px;
 
   gap: 12px;
+  justify-content: flex-end;
 `;
