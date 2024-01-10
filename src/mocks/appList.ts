@@ -2,7 +2,7 @@ export type IApp = {
   id: string;
   name: string;
   selected: boolean;
-  logo: string;
+  logo?: string;
   appOpenningOptions: IOpenningOptions;
   url?: string;
 };

@@ -19,7 +19,7 @@ export const Logo: React.FC<IProps> = ({
 }) => {
   return (
     <S.Container>
-      <ShortcutLogoSVG width={logoWidth} height={logoHeight} />
+      <ShortcutLogoSVG width={logoWidth} height={logoHeight} testID="logo" />
       {showText && (
         <Typograph fontSize={fontSize} color="primary" font="Roboto-Bold">
           ShortcutPC

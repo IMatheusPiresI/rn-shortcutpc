@@ -23,7 +23,7 @@ export const Button: React.FC<IProps> = ({ title, variant, ...rest }) => {
     }
   };
   return (
-    <S.Container variant={variant} {...rest}>
+    <S.Container variant={variant} {...rest} testID="button">
       <Typograph color={getColor()} font="Roboto-Bold" fontSize={18}>
         {title}
       </Typograph>

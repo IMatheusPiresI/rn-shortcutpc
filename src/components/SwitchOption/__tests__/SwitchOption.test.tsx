@@ -1,7 +1,14 @@
-import { render, screen, fireEvent } from '@testing-library/react-native';
+import {
+  render,
+  screen,
+  fireEvent,
+  renderHook,
+  act,
+} from '@testing-library/react-native';
 import theme from 'resources/theme';
 import { ThemeProvider } from 'styled-components/native';
 import { SwitchOption } from '@components/SwitchOption';
+import { useAppConfigurationMMKV } from 'resources/hooks/useAppConfigurationMMKV';
 
 describe('SwitchOption Tests', () => {
   const KEY_SWITCH_OPTION_BUTTON = 'SwitchOptionButton';
@@ -40,5 +47,17 @@ describe('SwitchOption Tests', () => {
     const nameOff = screen.getByText('OFF');
 
     expect(nameOff).toBeVisible();
+  });
+
+  it('should be get option MMKV and start witch ON', () => {
+    render(renderSwitchOption(false));
+
+    const switchOption = screen.getByTestId(KEY_SWITCH_OPTION_BUTTON);
+
+    fireEvent.press(switchOption);
+
+    const nameOn = screen.getByText('ON');
+
+    expect(nameOn).toBeVisible();
   });
 });

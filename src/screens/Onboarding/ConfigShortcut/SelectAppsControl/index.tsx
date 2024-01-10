@@ -11,11 +11,6 @@ import { StackActions, useNavigation } from '@react-navigation/native';
 import { CardApp } from 'components/CardApp';
 import { useAppListConfiguration } from 'contexts/AppConfiguration';
 import lodash from 'lodash';
-import { ServerPCService } from 'services/serverPC';
-import { IApp } from 'mocks/appList';
-import { FirebaseService } from 'services/firebase';
-import { getUrlIconNavigator } from 'resources/utils/getURLNavigator';
-import { INavigators } from 'mocks/webApps';
 import theme from 'resources/theme';
 import { getAllAppsDownloadeds } from 'resources/helpers/getAllAppsInstalleds';
 

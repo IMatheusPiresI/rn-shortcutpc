@@ -12,13 +12,18 @@ type IProps = {
 export const CardAppSelect: React.FC<IProps> = ({ app, ...rest }) => {
   return (
     <S.Container activeOpacity={0.7} {...rest}>
-      <S.Logo
-        source={{
-          uri: verifyURL(app.logo),
-        }}
-        resizeMode="contain"
-      />
-      <S.BoxSelect>{app.selected && <S.BoxSelected />}</S.BoxSelect>
+      {app.logo && (
+        <S.Logo
+          source={{
+            uri: verifyURL(app.logo),
+          }}
+          resizeMode="contain"
+          testID="CardAppSelectLogo"
+        />
+      )}
+      <S.BoxSelect>
+        {app.selected && <S.BoxSelected testID="CardAppSelectedBox" />}
+      </S.BoxSelect>
     </S.Container>
   );
 };

@@ -71,7 +71,7 @@ export const SwitchOption: React.FC<IProps> = ({
       onPress={handleToogleOption}
       testID="SwitchOptionButton"
     >
-      <S.ContainerColor style={rAnimatedBgColor}>
+      <S.ContainerColor style={rAnimatedBgColor} testID="bgAnimated">
         <S.BoxOff>
           <Typograph font="Roboto-Bold" color="primary" fontSize={12}>
             OFF

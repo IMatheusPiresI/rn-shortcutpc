@@ -16,12 +16,12 @@ type IPassword = {
 };
 
 export const ServerPCService = {
-  verifyConnection: async () => {
+  getVerifyConnection: async () => {
     const result = await api.get('/connection/verify-connection-server');
 
     return result.data;
   },
-  openAppSelected: async (app: IAppOpenned) => {
+  postOpenAppSelected: async (app: IAppOpenned) => {
     const result = await api.post('/appAction/open-app-selected', app);
 
     return result.data;
@@ -32,7 +32,7 @@ export const ServerPCService = {
     return result.data;
   },
 
-  unblock: async (data: IPassword) => {
+  postUnblock: async (data: IPassword) => {
     const result = await api.post('/appAction/unblock', data);
 
     return result.data;

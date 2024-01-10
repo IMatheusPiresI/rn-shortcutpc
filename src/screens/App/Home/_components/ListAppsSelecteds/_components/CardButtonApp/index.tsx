@@ -38,7 +38,7 @@ export const CardButtonApp: React.FC<IProps> = ({
   const handleOpenApp = async () => {
     try {
       if (app.appOpenningOptions?.app) {
-        await ServerPCService.openAppSelected({
+        await ServerPCService.postOpenAppSelected({
           id: app.id,
           name: app.name,
           appOpenningOptions: {
@@ -51,7 +51,7 @@ export const CardButtonApp: React.FC<IProps> = ({
         });
       }
       if (app.appOpenningOptions.web && app.url) {
-        await ServerPCService.openAppSelected({
+        await ServerPCService.postOpenAppSelected({
           id: app.id,
           name: app.name,
           url: app.url,
@@ -111,7 +111,7 @@ export const CardButtonApp: React.FC<IProps> = ({
       <S.BoxLogo>
         <S.LogoApp
           source={{
-            uri: verifyURL(app.logo),
+            uri: verifyURL(app.logo ?? ''),
           }}
           resizeMode="contain"
         />
