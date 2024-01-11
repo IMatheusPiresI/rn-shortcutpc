@@ -110,7 +110,7 @@ describe('Header Tests', () => {
     });
   });
 
-  it('should be press button Settings on modal option and navigate to route Settingss', async () => {
+  it('should be press button Settings on modal option and navigate to route Settings', async () => {
     render(
       renderHeader({
         showArrow: false,
