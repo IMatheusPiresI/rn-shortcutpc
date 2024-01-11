@@ -106,7 +106,7 @@ describe('Header Tests', () => {
     fireEvent.press(menuOptions);
 
     await waitFor(() => {
-      expect(mockNavigation.navigate).toHaveBeenCalledWith('AddMoreAppss');
+      expect(mockNavigation.navigate).toHaveBeenCalledWith('AddMoreApps');
     });
   });
 
