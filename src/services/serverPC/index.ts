@@ -1,4 +1,4 @@
-import { IApp, IAppOpenned } from 'mocks/appList';
+import { IAppOpenned } from 'mocks/appList';
 import { INavigators } from 'mocks/webApps';
 import { api } from 'services';
 

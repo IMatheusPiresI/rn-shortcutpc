@@ -10,7 +10,8 @@
       "@assets/*": ["src/assets/*"],
       "@resources/*": ["src/resources/*"],
       "@screens/*": ["src/screens/*"],
-      "@routes/*": ["src/routes/*"]
+      "@routes/*": ["src/routes/*"],
+      "@services/*": ["src/services/*"]
     }
   }
 }

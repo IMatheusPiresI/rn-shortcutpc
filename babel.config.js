@@ -13,6 +13,7 @@ module.exports = {
           '@resources': './src/resources',
           '@screens': './src/screens',
           '@routes': './src/routes',
+          '@services': './src/services',
         },
       },
     ],
