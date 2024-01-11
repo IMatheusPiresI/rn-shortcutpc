@@ -12,6 +12,7 @@ export const KeyboardAvoid: React.FC<IProps> = ({ children }) => {
       style={{
         flex: 1,
       }}
+      testID="keyboardAvoid"
     >
       {children}
     </KeyboardAvoidingView>

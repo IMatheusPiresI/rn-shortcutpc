@@ -65,7 +65,7 @@ export const Header = ({
   return (
     <S.Header>
       {showArrow && (
-        <S.ButtonArrow onPress={handleGoBack}>
+        <S.ButtonArrow onPress={handleGoBack} testID="HeaderGoBack">
           <ArrowBackSVG />
         </S.ButtonArrow>
       )}
@@ -78,13 +78,16 @@ export const Header = ({
       {showMenu &&
         (onSelectApps ? (
           <S.CancelContainer>
-            <S.CancelButton onPress={onCancel}>
+            <S.CancelButton onPress={onCancel} testID="HeaderCancelSelectApps">
               <Typograph font="Roboto-Bold" fontSize={14} color="white">
                 Cancelar
               </Typograph>
             </S.CancelButton>
             {showDeleteOption && (
-              <S.ButtonDelete onPress={onDeletePress}>
+              <S.ButtonDelete
+                onPress={onDeletePress}
+                testID="HeaderDeleteSelectedApps"
+              >
                 <DeleteSVG width={24} height={24} />
               </S.ButtonDelete>
             )}
@@ -93,6 +96,7 @@ export const Header = ({
           <S.ButtonIconOption
             activeOpacity={0.7}
             onPress={handleToogleShowOptions}
+            testID="HeaderMenu"
           >
             <S.BoxHorizontalBar style={rAnimatedHorizontalBarTop} />
             <S.BoxHorizontalBar style={rAnimatedHorizontalBarHide} />
@@ -100,8 +104,11 @@ export const Header = ({
           </S.ButtonIconOption>
         ))}
 
-      <S.RNModal visible={showOptions} transparent>
-        <TouchableWithoutFeedback onPress={handleToogleShowOptions}>
+      <S.RNModal visible={showOptions} transparent testID="ModalOptions">
+        <TouchableWithoutFeedback
+          onPress={handleToogleShowOptions}
+          testID="HeaderTouchCloseModal"
+        >
           <S.SafeArea>
             <S.MContainer>
               <S.BoxButton activeOpacity={1}>
@@ -109,14 +116,21 @@ export const Header = ({
                   style={rAnimatedBoxOptionsAppear}
                   onTouchStart={() => {}}
                 >
-                  <S.ButtonOption border onPress={handleGoToAddMoreAppsApps}>
+                  <S.ButtonOption
+                    border
+                    onPress={handleGoToAddMoreAppsApps}
+                    testID="ModalOptionAdd"
+                  >
                     <AddSVG width={24} height={24} />
                     <Typograph font="Roboto-Bold" fontSize={14} color="primary">
                       Adicionar aplicativos
                     </Typograph>
                   </S.ButtonOption>
 
-                  <S.ButtonOption onPress={handleGoToAppConfiguration}>
+                  <S.ButtonOption
+                    onPress={handleGoToAppConfiguration}
+                    testID="ModalOptionSettings"
+                  >
                     <SettingsSVG width={24} height={24} />
                     <Typograph font="Roboto-Bold" fontSize={14} color="primary">
                       Configurarações
