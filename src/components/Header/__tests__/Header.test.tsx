@@ -131,7 +131,7 @@ describe('Header Tests', () => {
     fireEvent.press(buttonSettings);
 
     await waitFor(() => {
-      expect(mockNavigation.navigate).toHaveBeenCalledWith('Settingssssss');
+      expect(mockNavigation.navigate).toHaveBeenCalledWith('Settings');
     });
   });
 
