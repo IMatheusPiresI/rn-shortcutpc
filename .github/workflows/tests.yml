@@ -15,16 +15,3 @@ jobs:
           node-version: 18.x
       - run: yarn
       - run: yarn test
-
-  check-status:
-    runs-on: ubuntu-latest
-    needs: [publish]
-    steps:
-      - name: Check action status
-        run: |
-          curl -X GET https://api.github.com/repos/<owner>/<repo>/actions/<workflow_id>/runs/<run_id>
-
-      - name: Push if build succeeded
-        if: steps.check-status.outputs.status == 'completed' && steps.check-status.outputs.conclusion == 'success'
-        run: |
-          git push origin main
