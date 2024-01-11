@@ -10,11 +10,9 @@ export const FloatingButton: React.FC = () => {
 
   const handleUnblockPC = async () => {
     const password = getComputerPasswordConfigValue();
-    console.log('password', password);
     if (!password) return;
 
     try {
-      console.log('chamei postUnblock');
       await ServerPCService.postUnblock({
         password,
       });
