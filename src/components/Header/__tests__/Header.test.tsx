@@ -110,7 +110,7 @@ describe('Header Tests', () => {
     });
   });
 
-  it('should be press button Settings on modal option and navigate to route Settingsssss', async () => {
+  it('should be press button Settings on modal option and navigate to route Settings', async () => {
     render(
       renderHeader({
         showArrow: false,
@@ -131,7 +131,7 @@ describe('Header Tests', () => {
     fireEvent.press(buttonSettings);
 
     await waitFor(() => {
-      expect(mockNavigation.navigate).toHaveBeenCalledWith('Settings');
+      expect(mockNavigation.navigate).toHaveBeenCalledWith('Settingss');
     });
   });
 
