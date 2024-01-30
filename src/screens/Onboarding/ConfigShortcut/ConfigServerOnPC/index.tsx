@@ -10,6 +10,7 @@ import ArrowBackSVG from '@assets/arrow-back.svg';
 import { useNavigation } from '@react-navigation/native';
 import { ButtonSODocumentation } from './_components/ButtonSODocumentation';
 import { ModalVerifyConnection } from 'components/Modals/ModalVerifyConnection';
+import { Linking } from 'react-native';
 
 const ConfigServerOnPC = () => {
   const navigation = useNavigation();
@@ -18,6 +19,12 @@ const ConfigServerOnPC = () => {
     if (navigation.canGoBack()) {
       navigation.goBack();
     }
+  };
+
+  const handleOppenInstallationDoc = () => {
+    Linking.openURL(
+      'https://github.com/IMatheusPiresI/shortcutpc-server-express',
+    );
   };
 
   const handleFinishConfigurePC = () => {
@@ -60,16 +67,9 @@ const ConfigServerOnPC = () => {
             </S.BoxDescription>
             <S.BoxButtonsSO>
               <ButtonSODocumentation
-                title="Windows"
-                url="https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Windows_logo_-_2012_%28dark_blue%29.svg/2048px-Windows_logo_-_2012_%28dark_blue%29.svg.png"
-              />
-              <ButtonSODocumentation
-                title="Linux"
-                url="https://pngimg.com/d/linux_PNG1.png"
-              />
-              <ButtonSODocumentation
                 title="Mac OS"
                 url="https://cdn-icons-png.flaticon.com/512/2/2235.png"
+                onPress={handleOppenInstallationDoc}
               />
             </S.BoxButtonsSO>
           </S.Content>

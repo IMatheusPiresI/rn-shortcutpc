@@ -7,22 +7,22 @@ type IPresentation = {
 export const presentation: IPresentation[] = [
   {
     id: '1',
-    title: 'Title',
-    description: `Você já se pegou desejando uma maneira mais rápida e eficiente de acessar seus aplicativos favoritos no computador? Apresentamos o AppLauncher, a solução que transformará a forma como você interage com seus programas diários.`,
+    title: 'Controle Remoto',
+    description: `O ShortcutPC transforma seu smartphone em um controle remoto personalizado, permitindo que você abra seus aplicativos e navegue na web com facilidade. Simplifique sua experiência digital com toques rápidos e configurações personalizadas.`,
   },
   {
     id: '2',
-    title: 'Title',
-    description: `Você já se pegou desejando uma maneira mais rápida e eficiente de acessar seus aplicativos favoritos no computador? Apresentamos o AppLauncher, a solução que transformará a forma como você interage com seus programas diários.`,
+    title: 'Navegação Rápida',
+    description: `Com o ShortcutPC, a navegação na web e o acesso aos seus aplicativos favoritos ficam a apenas um toque de distância. Controle seu mundo digital de forma eficiente e personalizada, diretamente do seu smartphone.`,
   },
   {
     id: '3',
-    title: 'Title',
-    description: `Você já se pegou desejando uma maneira mais rápida e eficiente de acessar seus aplicativos favoritos no computador? Apresentamos o AppLauncher, a solução que transformará a forma como você interage com seus programas diários.`,
+    title: 'Desbloqueio Remoto',
+    description: `O ShortcutPC permite desbloquear seu PC de qualquer lugar, inserindo a senha diretamente do seu smartphone. Garanta que a tela de senha ou protetor de tela esteja ativa no PC para uma experiência prática e segura.`,
   },
   {
     id: '4',
-    title: 'Title',
-    description: `Você já se pegou desejando uma maneira mais rápida e eficiente de acessar seus aplicativos favoritos no computador? Apresentamos o AppLauncher, a solução que transformará a forma como você interage com seus programas diários.`,
+    title: 'Gerenciamento de Aplicativos',
+    description: `O ShortcutPC simplifica acesso e gerenciamento de aplicativos. Personalize aberturas, remova facilmente apps não necessários, e mantenha seu ambiente digital organizado.`,
   },
 ];

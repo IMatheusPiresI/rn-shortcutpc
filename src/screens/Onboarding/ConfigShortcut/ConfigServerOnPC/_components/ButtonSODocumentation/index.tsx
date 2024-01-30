@@ -9,9 +9,13 @@ type IProps = {
   url: string;
 } & TouchableOpacityProps;
 
-export const ButtonSODocumentation: React.FC<IProps> = ({ title, url }) => {
+export const ButtonSODocumentation: React.FC<IProps> = ({
+  title,
+  url,
+  ...rest
+}) => {
   return (
-    <S.Container activeOpacity={0.7}>
+    <S.Container activeOpacity={0.7} {...rest}>
       <S.ImageLogo
         source={{
           uri: url,
