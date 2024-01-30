@@ -1,4 +1,4 @@
-name: PR - Testes com Jest
+name: PR - Tests App
 on:
   pull_request:
     branches:

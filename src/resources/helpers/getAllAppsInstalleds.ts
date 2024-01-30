@@ -26,6 +26,7 @@ export const getAllAppsDownloadeds = async () => {
       },
     };
   });
+
   const myApps: IApp[] = appsInstalleds.apps.map((app) => {
     return {
       id: app.id,
