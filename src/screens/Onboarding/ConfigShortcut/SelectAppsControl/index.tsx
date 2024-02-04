@@ -71,7 +71,7 @@ const SelectAppsControl = () => {
                 alignment="justify"
                 color="primary"
               >
-                2 - Selecione os aplicativos que deseja controlar
+                3 - Selecione os aplicativos que deseja controlar
               </Typograph>
               <Typograph
                 font="Roboto-Bold"
