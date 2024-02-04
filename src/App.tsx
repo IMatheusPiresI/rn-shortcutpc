@@ -13,7 +13,7 @@ const App: React.FC = () => {
         <AppConfigurationProvider>
           <AppRoutes />
           {Platform.OS === 'android' && (
-            <StatusBar backgroundColor="#fff" barStyle="dark-content" />
+            <StatusBar backgroundColor="#ffffff" barStyle="dark-content" />
           )}
         </AppConfigurationProvider>
       </ErrorControlProvider>
