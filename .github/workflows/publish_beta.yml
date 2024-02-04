@@ -31,4 +31,4 @@ jobs:
 
       - name: Deploy to Google Play Store
         run: |
-          npm android:fastlane:beta
+          npm run android:fastlane:beta
