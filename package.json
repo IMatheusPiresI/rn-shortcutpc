@@ -10,7 +10,9 @@
     "test": "jest --coverage",
     "pod": "cd ios && pod install",
     "android:apk": "cd android && ./gradlew assembleRelease && open ./app/build/outputs/apk/release",
-    "android:aab": "cd android && ./gradlew bundleRelease && open ./app/build/outputs/bundle/release"
+    "android:aab": "cd android && ./gradlew bundleRelease && open ./app/build/outputs/bundle/release",
+    "android:fastlane:beta": "cd android && fastlane deploy_internal",
+    "android:fastlane:production": "cd android && fastlane deploy_production"
   },
   "dependencies": {
     "@react-native-community/netinfo": "^11.2.1",

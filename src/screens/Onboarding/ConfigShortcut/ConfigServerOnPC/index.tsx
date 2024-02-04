@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import * as S from './styles';
 
@@ -9,7 +9,6 @@ import { Typograph } from '@components/Typograph';
 import ArrowBackSVG from '@assets/arrow-back.svg';
 import { useNavigation } from '@react-navigation/native';
 import { ButtonSODocumentation } from './_components/ButtonSODocumentation';
-import { ModalVerifyConnection } from 'components/Modals/ModalVerifyConnection';
 import { Linking } from 'react-native';
 
 const ConfigServerOnPC = () => {

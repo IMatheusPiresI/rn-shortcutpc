@@ -1,0 +1,32 @@
+name: Deploy to Google Play Store
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18.x
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Setup Fastlane
+        run: |
+          gem install bundler
+          bundle install
+        working-directory: ./android # Ajuste para o diretório correto
+
+      - name: Deploy to Google Play Store
+        run: |
+          npm android:fastlane:beta

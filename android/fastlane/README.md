@@ -23,6 +23,14 @@ For _fastlane_ installation instructions, see [Installing _fastlane_](https://do
 
 Submit a new version to the internal track in the Google Play
 
+### android deploy_production
+
+```sh
+[bundle exec] fastlane android deploy_production
+```
+
+Submit a new version to the production track in the Google Play
+
 ----
 
 This README.md is auto-generated and will be re-generated every time [_fastlane_](https://fastlane.tools) is run.

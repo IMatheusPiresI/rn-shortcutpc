@@ -79,8 +79,8 @@ android {
         applicationId "com.macosappshortcut"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 2
-        versionName "1.0"
+        versionCode 6
+        versionName "1.0.2"
         resConfigs "pt", "BR"
     }
     signingConfigs {
