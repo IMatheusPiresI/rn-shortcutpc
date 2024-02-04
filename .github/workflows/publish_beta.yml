@@ -26,6 +26,9 @@ jobs:
           ruby-version: 3.0.2
           bundler-cache: true
 
+      - name: Copy Fastlane directory
+        run: cp -R android/fastlane/ $GITHUB_WORKSPACE/fastlane/
+
       - name: Install Fastlane
         run:
           gem install fastlane
