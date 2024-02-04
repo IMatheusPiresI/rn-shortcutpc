@@ -91,7 +91,7 @@ const RecoverUserIP: React.FC = () => {
                     alignment="justify"
                     color="primary"
                   >
-                    1 - Primeiro vamos buscar seu IP.
+                    2 - Primeiro vamos configurar seu IP.
                   </Typograph>
                   <Typograph
                     font="Roboto-Bold"
