@@ -37,7 +37,7 @@ jobs:
           cache: 'gradle'
 
       - name: Change wrapper permissions
-        run: chmod +x ./gradlew
+        run: chmod +x ./android/gradlew
 
       - name: Deploy to Google Play Store
         run: |
