@@ -20,17 +20,22 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Set up ruby env
+      - name: Install Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 2.7.5
+          ruby-version: 3.0.2
           bundler-cache: true
 
-      - name: Setup Fastlane
+      - name: Install Fastlane
+        run:
+          gem install fastlane
+
+          # Setup Fastlane Plugins
+      - name: Add Fastlane Plugins
         run: |
-          gem install bundler
-          bundle install
-        working-directory: ./android # Ajuste para o diretório correto
+          fastlane add_plugin increment_version_code
+          fastlane add_plugin increment_version_name
+          fastlane add_plugin get_version_name
 
       - name: Deploy to Google Play Store
         run: |
